@@ -1,6 +1,7 @@
 package com.example.anupamprakash.nitw;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -30,9 +31,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        //fipper
+
+        /* fipper */
         int images[] = { R.drawable.nitw , R.drawable.nitw2 , R.drawable.h1 } ;
       viewflipper= findViewById(R.id.flipper);
 
@@ -41,8 +41,7 @@ public class MainActivity extends AppCompatActivity
         }
 
 
-      //end of flipper
-      //buttons
+      /* end of flipper */
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -53,12 +52,14 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-            //toolbar
+            /* toolbar */
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
-
         actionbar.setDisplayHomeAsUpEnabled(true);
 
-        //endof toolbar
+        /* end of toolbar */
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity
         viewflipper.setFlipInterval(5000); //5 sec
         viewflipper.setAutoStart(true);
 
-        //animation
+        /* animation */
 
         viewflipper.setInAnimation(this,android.R.anim.slide_in_left);
         viewflipper.setOutAnimation(this,android.R.anim.slide_out_right);
@@ -176,17 +177,39 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_administration) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_academics) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_departments) {
+            Intent intent =new Intent(this,DepartmentActivity.class);
+            this.startActivity(intent);
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_rdc) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_welfare) {
+
+        } else if (id == R.id.nav_facilities){
+
+        } else if (id == R.id.nav_placements){
+
+        } else if(id == R.id.nav_nirf){
+
+        } else if(id == R.id.nav_tlc){
+
+        } else if(id == R.id.nav_almuni){
+
+        } else if(id == R.id.nav_raa){
+
+        } else if(id == R.id.iyd){
+
+        } else if(id == R.id.nav_share){
+
+        } else if(id== R.id.nav_send){
+
+        } else if(id == R.id.nav_logout){
 
         }
 
