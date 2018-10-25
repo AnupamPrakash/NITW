@@ -1,6 +1,7 @@
 package com.example.anupamprakash.nitw;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -48,13 +49,14 @@ public class MainActivity extends AppCompatActivity
       /* end of flipper */
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Intent intent = new Intent(MainActivity.this,MapsActivity.class);
-               startActivity(intent);
-            }
-        });
+        /* code for mapsactivity currently giving errors */
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//               Intent intent = new Intent(MainActivity.this,MapsActivity.class);
+//               startActivity(intent);
+//            }
+//        });
 
             /* toolbar */
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -167,9 +169,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
