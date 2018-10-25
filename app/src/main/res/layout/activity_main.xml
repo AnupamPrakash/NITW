@@ -24,17 +24,8 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 
-    <com.ramotion.circlemenu.CircleMenuView
-        android:id="@+id/circle_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:button_colors="@array/colors"
-        app:button_icons="@array/icons"
-        />
+
 
 
 </android.support.v4.widget.DrawerLayout>
-
-
-
 

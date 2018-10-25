@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.anupamprakash.nitw.MainActivity"
     tools:showIn="@layout/app_bar_main"
     android:background="#ffffff"
-    android:orientation="vertical">
+    >
     <ViewFlipper
         android:id="@+id/flipper"
         android:layout_height="250dp"
@@ -20,5 +20,19 @@
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimaryDark">
     </ViewFlipper>
-</LinearLayout>
+
+    <com.ramotion.circlemenu.CircleMenuView
+        android:id="@+id/circle_menu"
+        android:layout_alignBottom="@+id/nav_view"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:button_colors="@array/colors"
+        app:button_icons="@array/icons"
+        app:icon_menu="@drawable/student_login_image"
+        app:icon_color="@color/colorPrimary"
+        />
+
+</RelativeLayout>
 </ScrollView>
