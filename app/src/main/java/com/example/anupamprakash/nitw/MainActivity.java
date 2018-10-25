@@ -17,8 +17,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
+
 
 import com.ramotion.circlemenu.CircleMenuView;
 
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
  ViewFlipper viewflipper;
+ ImageView imageView;
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         /* fipper */
         int images[] = { R.drawable.nitw , R.drawable.nitw2 , R.drawable.h1 } ;
       viewflipper= findViewById(R.id.flipper);
-
+        imageView=(ImageView) findViewById(R.id.notification);
         for (int image:images) {
             flipperImage(image);
         }
@@ -47,8 +51,8 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               Intent intent = new Intent(MainActivity.this,MapsActivity.class);
+               startActivity(intent);
             }
         });
 
@@ -56,10 +60,10 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
+
         actionbar.setDisplayHomeAsUpEnabled(true);
 
-        /* end of toolbar */
-
+        //endof toolbar
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -68,10 +72,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
-        //menu circular_view control functions start.
 
         final CircleMenuView menu = findViewById(R.id.circle_menu);
         menu.setEventListener(new CircleMenuView.EventListener() {
@@ -123,10 +123,13 @@ public class MainActivity extends AppCompatActivity
 
         });
 
-        //end of functions.
-
-        }
-
+    }
+//    imageButt
+    public void notification(View view)
+    {
+        Intent intent = new Intent(MainActivity.this,Notification.class);
+        startActivity(intent);
+    }
     public void flipperImage(int image){
         ImageView imageView=new ImageView(this);
         imageView.setBackgroundResource(image);
