@@ -9,7 +9,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends BaseActivity {
+
     private ImageView imageView;
     private TextView institutename,intittuteloc;
     private CardView cardimage,namecard,loccard;

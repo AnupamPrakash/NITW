@@ -26,7 +26,7 @@ import android.widget.ViewFlipper;
 
 import com.ramotion.circlemenu.CircleMenuView;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
  ViewFlipper viewflipper;
@@ -45,18 +45,17 @@ public class MainActivity extends AppCompatActivity
             flipperImage(image);
         }
 
-
       /* end of flipper */
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         /* code for mapsactivity currently giving errors */
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//               Intent intent = new Intent(MainActivity.this,MapsActivity.class);
-//               startActivity(intent);
-//            }
-//        });
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent intent = new Intent(MainActivity.this,MapsActivity.class);
+               startActivity(intent);
+            }
+        });
 
             /* toolbar */
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -166,14 +165,15 @@ public class MainActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+//        int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
 //        if (id == R.id.action_settings) {
 //            return true;
 //        }
 
-        return super.onOptionsItemSelected(item);
+//        return super.onOptionsItemSelected(item);
+        return false;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

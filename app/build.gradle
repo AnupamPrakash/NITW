@@ -36,4 +36,5 @@ dependencies {
     implementation 'com.ramotion.circlemenu:circle-menu:0.3.1'
     implementation 'com.alexvasilkov:foldable-layout:1.2.1'
     implementation 'com.rom4ek:arcnavigationview:1.0.3'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
 }

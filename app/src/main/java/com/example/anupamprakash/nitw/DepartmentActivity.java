@@ -14,7 +14,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DepartmentActivity extends AppCompatActivity {
+public class DepartmentActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private DepartmentAdapter departmentAdapter;
     private List<Department> departmentList;
