@@ -21,5 +21,4 @@ public class MyApplication extends Application {
     public static synchronized MyApplication getInstance() {
         return mInstance;
     }
-
 }
