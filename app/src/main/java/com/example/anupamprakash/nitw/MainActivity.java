@@ -36,14 +36,22 @@ public class MainActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /* fipper */
+        /* flipper */
         int images[] = { R.drawable.nitw , R.drawable.nitw2 , R.drawable.h1 } ;
       viewflipper= findViewById(R.id.flipper);
         imageView=(ImageView) findViewById(R.id.notification);
         for (int image:images) {
             flipperImage(image);
         }
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                notification(view);
+            }
+        });
 
       /* end of flipper */
 
@@ -128,6 +136,7 @@ public class MainActivity extends BaseActivity
 //    imageButt
     public void notification(View view)
     {
+        //Intent intent=new Intent(getApplicationContext(),Notification.class);
         Intent intent = new Intent(MainActivity.this,Notification.class);
         startActivity(intent);
     }

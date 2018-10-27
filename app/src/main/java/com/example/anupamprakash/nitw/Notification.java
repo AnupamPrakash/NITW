@@ -6,10 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Notification extends Activity {
+import com.ramotion.foldingcell.FoldingCell;
+
+public class Notification extends BaseActivity{
 
     private RecyclerView recyclerView;
     private  RecyclerView.Adapter rAdapter;
@@ -18,10 +22,13 @@ public class Notification extends Activity {
 
 
     @SuppressLint("ShowToast")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+
+
+
         recyclerView=(RecyclerView) findViewById(R.id.notification_list);
         recyclerView.setHasFixedSize(true);
 //
@@ -38,6 +45,10 @@ public class Notification extends Activity {
 
         rAdapter=new NotificationAdapter(this,dataset);
         recyclerView.setAdapter(rAdapter);
+
+
     }
+
+
 
 }
