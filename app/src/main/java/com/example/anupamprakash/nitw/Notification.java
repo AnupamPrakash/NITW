@@ -31,7 +31,6 @@ public class Notification extends BaseActivity{
 
         recyclerView=(RecyclerView) findViewById(R.id.notification_list);
         recyclerView.setHasFixedSize(true);
-//
         rLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(rLayoutManager);
 
@@ -45,8 +44,6 @@ public class Notification extends BaseActivity{
 
         rAdapter=new NotificationAdapter(this,dataset);
         recyclerView.setAdapter(rAdapter);
-
-
     }
 
 

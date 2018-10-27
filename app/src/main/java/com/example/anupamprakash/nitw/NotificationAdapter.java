@@ -24,25 +24,14 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     private String[] dataset;
     private Context context;
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder{
         LinearLayout layout;
         private ItemClickListener clickListener;
-
-        public ViewHolder(LinearLayout layout) {
-            super(layout);
-            this.layout=layout;
-        }
-
-        public void setClickListener(ItemClickListener itemClickListener)
-        {
-            this.clickListener = itemClickListener;
-        }
-
-        @Override
-        public void onClick(View view) {
-
-            clickListener.Onclick(view,getPosition());
-
+        TextView titleTextView,contentTextView;
+        public ViewHolder(View view) {
+            super(view);
+            titleTextView=(TextView) view.findViewById(R.id.titleView);
+            contentTextView=(TextView)view.findViewById(R.id.contentView);
         }
     }
 
@@ -55,37 +44,23 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext()).inflate(R.layout.notification_layout,parent,false);
-        return new ViewHolder(v);
+        View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.notification_layout,parent,false);
+        return new ViewHolder(itemview);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final String data = dataset[position];
-
-        holder.setClickListener(new ItemClickListener() {
-
+        holder.titleTextView.setText(data);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void Onclick(View view, int position) {
+            public void onClick(View v) {
+                final FoldingCell fc = (FoldingCell) v.findViewById(R.id.folding_cell);
 
-                final FoldingCell fc = (FoldingCell)view.findViewById(R.id.folding_cell);
-
-                Toast.makeText(context, "hello"+position, Toast.LENGTH_SHORT).show();
-
-                // attach click listener to fold btn
-                final Button toggleBtn = (Button) view.findViewById(R.id.toggle_btn);
-
-                toggleBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        fc.toggle(false);
-                    }
-
-                });
+                Toast.makeText(context, "hello" + data, Toast.LENGTH_SHORT).show();
+                fc.toggle(false);
             }
-
         });
-
     }
 
     @Override
