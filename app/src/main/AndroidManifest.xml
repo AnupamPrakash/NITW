@@ -28,7 +28,8 @@
         </activity>
         <activity android:name=".DepartmentActivity"
             android:label="Departments"></activity>
-
+        <activity android:name=".DetailsActivity"
+            android:label="Gallery"></activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
