@@ -26,8 +26,9 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         LinearLayout layout;
-        private ItemClickListener clickListener;
+
         TextView titleTextView,contentTextView;
+
         public ViewHolder(View view) {
             super(view);
             titleTextView=(TextView) view.findViewById(R.id.titleView);
@@ -52,11 +53,11 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final String data = dataset[position];
         holder.titleTextView.setText(data);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final FoldingCell fc = (FoldingCell) v.findViewById(R.id.folding_cell);
-
                 Toast.makeText(context, "hello" + data, Toast.LENGTH_SHORT).show();
                 fc.toggle(false);
             }
@@ -67,4 +68,5 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     public int getItemCount() {
         return dataset.length;
     }
+
 }
